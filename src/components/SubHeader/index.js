@@ -1,15 +1,12 @@
 import React, {
   useState,
 } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { SUBTITLE_TABS } from '../../constant';
 import { setTab } from '../../redux/actions';
 import './index.scss';
 
-function SubHeader({
-  temp,
-}) {
+function SubHeader() {
   const [showSubHeader, setShowSubHeader] = useState(true);
   const dispatch = useDispatch();
 
@@ -27,6 +24,7 @@ function SubHeader({
 
           return (
             <button
+              key={tab.value}
               type="button"
               onClick={() => dispatch(setTab(tab.value))}
               className={isActive ? 'subheader__tab subheader__tab--active' : 'subheader__tab'}
@@ -46,13 +44,5 @@ function SubHeader({
     </div>
   );
 }
-
-SubHeader.propTypes = {
-  temp: PropTypes.any,
-};
-
-SubHeader.defaultProps = {
-  temp: null,
-};
 
 export default SubHeader;

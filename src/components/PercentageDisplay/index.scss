@@ -1,0 +1,17 @@
+.percentage-display {
+  width: 100%;
+  position: relative;
+  background-color: #CCC;
+
+  &__bar {
+    height: 30px;
+    background-color: yellow;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+  }
+}
